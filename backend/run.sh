@@ -68,10 +68,26 @@ fi
 
 echo "✅ Dependencies installed"
 echo ""
+
+# Get port from command line argument or use default  
+PORT=${1:-8089}
+
+# Check if port is in use
+if lsof -Pi :$PORT -sTCP:LISTEN -t >/dev/null 2>&1 ; then
+    echo "⚠️  Warning: Port $PORT is already in use"
+    echo "   Kill the process or choose a different port:"
+    echo "   ./run.sh 8090"
+    echo ""
+    echo "   To kill the process using port $PORT:"
+    echo "   lsof -ti:$PORT | xargs kill -9"
+    echo ""
+    exit 1
+fi
+
 echo "=============================="
-echo "🎯 Starting FastAPI server on port 8005..."
+echo "🎯 Starting FastAPI server on port $PORT..."
 echo "=============================="
 echo ""
 
-# Start the application
-python run.py
+# Start the application with specified port
+python run.py $PORT

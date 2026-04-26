@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Backend API URL - use your computer's IP address for real device testing
 // For iOS Simulator, you can use localhost
-const API_URL = 'http://192.168.1.13:8005/api';
+const API_URL = 'http://192.168.1.13:8089/api';
 
 // Type definitions
 export interface ReceiptAnalysisResult {
