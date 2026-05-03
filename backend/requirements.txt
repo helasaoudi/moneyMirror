@@ -7,3 +7,4 @@ transformers==4.45.0
 torch==2.4.0
 Pillow==10.4.0
 accelerate==0.34.0
+pytesseract==0.3.13

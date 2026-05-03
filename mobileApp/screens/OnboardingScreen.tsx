@@ -8,10 +8,10 @@ export default function OnboardingScreen({ navigation }: any) {
   const handleGetStarted = async () => {
     try {
       await AsyncStorage.setItem('hasSeenOnboarding', 'true');
-      navigation.replace('MainTabs');
+      navigation.replace('BudgetSetup');
     } catch (error) {
       console.error('Error saving onboarding state:', error);
-      navigation.replace('MainTabs');
+      navigation.replace('BudgetSetup');
     }
   };
 

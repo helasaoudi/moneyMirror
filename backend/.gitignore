@@ -56,8 +56,12 @@ logs/
 *.sqlite
 *.sqlite3
 
-# Model cache (HuggingFace, AI models)
+# Model cache (HuggingFace, AI models - 4.9GB+)
 models/
+*.safetensors
+*.bin
+*.gguf
+.cache/
 *.bin
 *.safetensors
 .cache/
